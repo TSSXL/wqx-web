@@ -1,0 +1,233 @@
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  height: 128px;
+  background-color: black;
+}
+.home .main {
+  width: 70%;
+  margin: 80px auto;
+}
+.home .main .title {
+  color: #333333;
+  font-size: 36px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 30px 0;
+}
+.home .main .time {
+  color: #9E9E9E;
+  font-size: 18px;
+  font-family: "gothambook";
+}
+.home .main .html {
+  padding: 40px 0;
+  margin: 40px auto;
+  border-top: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+  color: #333333;
+  font-size: 18px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  line-height: 36px;
+}
+.home .main .pager {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .main .pager a {
+  color: #666666;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+
+/*# sourceMappingURL=newsInfo.css.map */

@@ -1,0 +1,845 @@
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.home .banner .bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .banner .bg img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.home .banner .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.home .banner .text .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .banner .text .p2 {
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0;
+  padding-bottom: 0;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .about {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.home .main .about #particles-js {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.home .main .about .t1 {
+  margin-bottom: 20px;
+}
+.home .main .about .t1 span {
+  color: #535353;
+  font-size: 60px;
+}
+.home .main .about .t1 span:nth-child(1) {
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .about .t1 span:nth-child(2) {
+  font-weight: lighter;
+}
+.home .main .about .t2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "TimesNewRomanPSMT";
+  text-transform: uppercase;
+  position: relative;
+  padding: 10px 0 20px 0;
+  margin-bottom: 40px;
+}
+.home .main .about .t2::after {
+  width: 20px;
+  height: 1px;
+  background: #E60012;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.home .main .about .des {
+  margin-top: 30px;
+  color: #888888;
+  font-family: "MicrosoftYaHei";
+  line-height: 36px;
+}
+.home .main .about .num {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  padding-top: 80px;
+}
+.home .main .about .num::before {
+  width: 1px;
+  height: 60px;
+  background: #666666;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+}
+.home .main .about .num .item {
+  text-align: center;
+  margin: 20px 3%;
+}
+.home .main .about .num .item .nums {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.home .main .about .num .item .nums p {
+  font-size: 72px;
+  color: #333333;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .about .num .item .nums span {
+  color: #AAAAAA;
+  font-size: 18px;
+  font-family: "TimesNewRomanPSMT";
+  transform: translateY(-10px);
+}
+.home .main .about .num .item .st {
+  color: #AAAAAA;
+  font-family: "MicrosoftYaHei";
+  margin-top: 5px;
+}
+.home .main .chose {
+  width: 100%;
+  background: url("../images/lbg.png") no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+}
+.home .main .chose .title {
+  text-align: center;
+}
+.home .main .chose .title .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .chose .title .p2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 30px;
+}
+.home .main .chose .nr {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .main .chose .nr .l {
+  width: 25%;
+}
+.home .main .chose .nr .l .item {
+  margin-bottom: 60px;
+}
+.home .main .chose .nr .l .item .p1 {
+  display: flex;
+  flex-direction: row;
+}
+.home .main .chose .nr .l .item .p1 span {
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  font-size: 22px;
+  color: white;
+}
+.home .main .chose .nr .l .item .p1 span:nth-child(1) {
+  color: #E60012;
+}
+.home .main .chose .nr .l .item .p2 {
+  color: #888888;
+  font-size: 20px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  border-bottom: 1px solid #626262;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+.home .main .chose .nr .l .item:nth-of-type(2) {
+  margin-left: 30px;
+}
+.home .main .chose .nr .l .item:nth-of-type(3) {
+  margin-left: 60px;
+}
+.home .main .chose .nr .c {
+  width: 40%;
+  position: relative;
+}
+.home .main .chose .nr .c .d1 {
+  width: 124px;
+  height: 124px;
+  background-color: #E60012;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 100;
+}
+.home .main .chose .nr .c .d1 p:nth-child(1) {
+  font-size: 24px;
+}
+.home .main .chose .nr .c .d1 p:nth-child(1) span:last-child {
+  font-size: 18px;
+}
+.home .main .chose .nr .c .d2 {
+  width: 124px;
+  height: 124px;
+  background-color: #272B3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  left: 8px;
+  bottom: 60px;
+  border-radius: 50%;
+  z-index: 100;
+}
+.home .main .chose .nr .c .d2 p:nth-child(1) {
+  font-size: 24px;
+  color: #E60012;
+}
+.home .main .chose .nr .c .d2 p:nth-child(1) span:last-child {
+  font-size: 18px;
+}
+.home .main .chose .nr .c .d2 p:nth-child(2) {
+  color: #ACACAC;
+}
+.home .main .chose .nr .c .d3 {
+  width: 124px;
+  height: 124px;
+  background-color: #272B3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  right: 8px;
+  bottom: 60px;
+  border-radius: 50%;
+  z-index: 100;
+}
+.home .main .chose .nr .c .d3 p:nth-child(1) {
+  font-size: 24px;
+  color: #E60012;
+}
+.home .main .chose .nr .c .d3 p:nth-child(1) span:last-child {
+  font-size: 18px;
+}
+.home .main .chose .nr .c .d3 p:nth-child(2) {
+  color: #ACACAC;
+}
+.home .main .chose .nr .c .pic {
+  width: 100%;
+  animation: run 2s infinite linear;
+}
+.home .main .chose .nr .c .pic img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+@keyframes run {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.home .main .chose .nr .r {
+  width: 25%;
+  text-align: right;
+}
+.home .main .chose .nr .r .item {
+  margin-bottom: 60px;
+}
+.home .main .chose .nr .r .item .p1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.home .main .chose .nr .r .item .p1 span {
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  font-size: 22px;
+  color: #E60012;
+}
+.home .main .chose .nr .r .item .p1 span:nth-child(1) {
+  color: white;
+}
+.home .main .chose .nr .r .item .p2 {
+  color: #888888;
+  font-size: 20px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  border-bottom: 1px solid #626262;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+.home .main .chose .nr .r .item:nth-of-type(2) {
+  width: calc( 100% - 30px);
+}
+.home .main .chose .nr .r .item:nth-of-type(3) {
+  width: calc( 100% - 60px);
+}
+.home .main .service {
+  width: 90%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.home .main .service .item, .home .main .service .item1 {
+  width: 32%;
+  margin-bottom: 30px;
+}
+.home .main .service .item1 .p1 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.home .main .service .item1 .p1::before {
+  content: "";
+  display: inline-block;
+  background-color: #FF0013;
+  width: 1px;
+  height: 21px;
+  margin: 0 0 60px 0;
+}
+.home .main .service .item1 .p2 {
+  color: #222222;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 40px;
+}
+.home .main .service .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7F7F7;
+  padding: 60px 0;
+  transition: all 600ms;
+  padding-bottom: 0;
+  cursor: pointer;
+}
+.home .main .service .item .pic {
+  position: relative;
+  display: inline-block;
+}
+.home .main .service .item .pic img {
+  display: block;
+  transition: all 600ms;
+}
+.home .main .service .item .pic img:nth-of-type(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+.home .main .service .item .title {
+  font-size: 18px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 20px 0;
+  transition: all 600ms;
+  color: black;
+}
+.home .main .service .item .des {
+  color: #888888;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  line-height: 30px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 600ms;
+}
+.home .main .service .item .more {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.home .main .service .item .more .spic {
+  position: relative;
+  display: inline-block;
+}
+.home .main .service .item .more .spic img {
+  display: block;
+  transition: all 600ms;
+}
+.home .main .service .item .more .spic img:nth-of-type(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+.home .main .service .item:hover {
+  background-color: #272B3D;
+}
+.home .main .service .item:hover .pic img:nth-of-type(1) {
+  opacity: 0;
+}
+.home .main .service .item:hover .pic img:nth-of-type(2) {
+  opacity: 1;
+}
+.home .main .service .item:hover .title, .home .main .service .item:hover .des {
+  color: white;
+}
+.home .main .service .item:hover .more .spic img:nth-of-type(1) {
+  opacity: 0;
+}
+.home .main .service .item:hover .more .spic img:nth-of-type(2) {
+  opacity: 1;
+}
+.home .main .advantge {
+  width: 100%;
+  background: url("../images/sbg.jpg") no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+}
+.home .main .advantge .cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  height: 120px;
+  width: 120px;
+  transition: none;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+.home .main .advantge .cursor .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.home .main .advantge .cursor .circle {
+  -webkit-transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  left: 0;
+  top: 0;
+  mix-blend-mode: exclusion;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  -webkit-transform: scale(0.15);
+  transform: scale(0.15);
+}
+.home .main .advantge .cursor .circle .cursor_text {
+  display: block;
+  font-size: 20px;
+  color: white;
+  opacity: 0;
+}
+.home .main .advantge .is-active .inner .circle {
+  background-color: white;
+  opacity: 1;
+  transform: scale(1);
+}
+.home .main .advantge .title {
+  text-align: center;
+  pointer-events: none;
+}
+.home .main .advantge .title .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .advantge .title .p2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 30px;
+}
+.home .main .advantge .allItems {
+  width: 60%;
+  pointer-events: none;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+.home .main .advantge .allItems .item {
+  width: 26%;
+}
+.home .main .advantge .allItems .item .d1 {
+  background: url("../images/sc.png") no-repeat;
+  background-size: contain;
+  height: 254px;
+  width: 257px;
+}
+.home .main .advantge .allItems .item .d1 .text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-left: 5%;
+}
+.home .main .advantge .allItems .item .d1 .text p {
+  color: white;
+}
+.home .main .advantge .allItems .item .d1 .text p:nth-child(1) {
+  font-size: 36px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .advantge .allItems .item .d1 .text p:nth-child(2) {
+  font-size: 22px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 5px;
+}
+.home .main .advantge .allItems .item .des {
+  color: white;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  margin: 40px auto;
+}
+.home .main .partner {
+  width: 90%;
+  margin: 80px auto;
+}
+.home .main .partner .t1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home .main .partner .t1 span {
+  color: #535353;
+  font-size: 60px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .partner .t1 span:nth-child(2) {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: "TimesNewRomanPSMT";
+}
+.home .main .partner .t2 {
+  color: #888888;
+  font-size: 24px;
+  text-align: center;
+  font-family: "HYQiHei-DZS";
+  margin-top: 10px;
+}
+.home .main .partner .allImgs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px auto;
+}
+.home .main .partner .allImgs .item {
+  border: 1px solid #EEEEEE;
+  width: 14%;
+  text-align: center;
+  padding: 20px 0;
+  cursor: pointer;
+}
+.home .main .partner .allImgs .item img {
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 600ms;
+}
+.home .main .partner .allImgs .item:hover img {
+  transform: scale(1.05);
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+@media screen and (max-width: 1440px) {
+  .home .main {
+    overflow: hidden;
+  }
+  .home .main .about .num {
+    margin-bottom: 80px;
+  }
+  .home .main .chose .title {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .home .main .chose .title .p2 {
+    line-height: 35px;
+  }
+  .home .main .advantge .allItems {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

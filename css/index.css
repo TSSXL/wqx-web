@@ -1,0 +1,905 @@
+@charset "UTF-8";
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.home .banner .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.home .banner .swiper-container .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide {
+  width: 100%;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item img {
+  display: block;
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item .text .t1 {
+  font-family: "HYQiHei-DZS";
+  font-size: 30px;
+  color: #F39800;
+  letter-spacing: 10px;
+  transition: all 600ms;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item .text .t2 {
+  color: white;
+  font-size: 160px;
+  text-transform: uppercase;
+  font-family: "JM-Exposition Plain-One";
+  letter-spacing: 20px;
+  margin: 10px auto;
+  transition: all 600ms;
+  transform: translateY(40px);
+  transition-delay: 100ms;
+  opacity: 0;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item .text .t3 {
+  color: white;
+  font-size: 36px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 40px;
+  letter-spacing: 15px;
+  margin-bottom: 20px;
+  transition: all 600ms;
+  transform: translateY(60px);
+  opacity: 0;
+  transition-delay: 200ms;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide .item .text .t4 {
+  font-family: "FZCYSK--GBK1-0";
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  opacity: 0.8;
+  transition: all 600ms;
+  transform: translateY(80px);
+  opacity: 0;
+  transition-delay: 300ms;
+}
+.home .banner .swiper-container .swiper-wrapper .swiper-slide-active .item .text .t1, .home .banner .swiper-container .swiper-wrapper .swiper-slide-active .item .text .t2, .home .banner .swiper-container .swiper-wrapper .swiper-slide-active .item .text .t3, .home .banner .swiper-container .swiper-wrapper .swiper-slide-active .item .text .t4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .banner .swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #EEEEEE;
+  border-radius: 50%;
+  opacity: 1;
+  position: relative;
+  margin-bottom: 30px;
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet::before {
+  width: 14px;
+  height: 14px;
+  background: #EEEEEE;
+  transform: scale(0);
+  border-radius: 50%;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  display: inline-block;
+  content: "";
+  transition: all 600ms;
+  opacity: 0.2;
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet-active::before {
+  transform: scale(1);
+}
+.home .main {
+  width: 100%;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .about {
+  width: 90%;
+  padding: 0 5%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 80px auto;
+  align-items: center;
+}
+.home .main .about .lpic {
+  width: 40%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.home .main .about .lpic img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 600ms;
+}
+.home .main .about .lpic:hover img {
+  transform: scale(1.05);
+}
+.home .main .about .intro {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 6%;
+  align-items: center;
+}
+.home .main .about .intro .text {
+  width: 65%;
+}
+.home .main .about .intro .text .t1 span {
+  color: #535353;
+  font-size: 60px;
+}
+.home .main .about .intro .text .t1 span:nth-child(1) {
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .about .intro .text .t1 span:nth-child(2) {
+  font-weight: lighter;
+}
+.home .main .about .intro .text .t2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "TimesNewRomanPSMT";
+  text-transform: uppercase;
+  position: relative;
+  padding: 10px 0 30px 0;
+}
+.home .main .about .intro .text .t2::after {
+  width: 20px;
+  height: 1px;
+  background: #E60012;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.home .main .about .intro .text .des {
+  margin-top: 30px;
+  color: #888888;
+  font-family: "MicrosoftYaHei";
+  line-height: 36px;
+}
+.home .main .about .intro .num {
+  width: 33%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .main .about .intro .num .item {
+  text-align: center;
+  margin: 20px 0;
+}
+.home .main .about .intro .num .item .nums {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.home .main .about .intro .num .item .nums p {
+  font-size: 72px;
+  font-family: "TimesNewRomanPSMT";
+}
+.home .main .about .intro .num .item .nums span {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  transform: translateY(-10px);
+}
+.home .main .about .intro .num .item .st {
+  color: #AAAAAA;
+  font-family: "MicrosoftYaHei";
+  margin-top: 5px;
+}
+.home .main .about .intro .num .item:nth-of-type(2) .nums p, .home .main .about .intro .num .item:nth-of-type(2) .nums span {
+  color: #D20010;
+}
+.home .main .about .bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.home .main .about .bg img {
+  width: 100%;
+  height: 100%;
+}
+.home .main .fiveIcon {
+  width: 100%;
+  background: url("../images/liBg.jpg") no-repeat;
+  background-size: cover;
+  height: 870px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.home .main .fiveIcon .waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+  z-index: 1000;
+  pointer-events: none;
+}
+.home .main .fiveIcon .item {
+  width: 20%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: all 600ms;
+  text-align: center;
+}
+.home .main .fiveIcon .item .spic {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 600ms;
+}
+.home .main .fiveIcon .item .spic img {
+  max-width: 90%;
+  object-fit: contain;
+}
+.home .main .fiveIcon .item .nr {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-40%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .main .fiveIcon .item .nr .pic img {
+  opacity: 0.5;
+  transition: all 600ms;
+}
+.home .main .fiveIcon .item .nr .t1 {
+  color: white;
+  font-size: 30px;
+  font-family: "方正粗雅宋_GBK";
+  margin-top: 40px;
+}
+.home .main .fiveIcon .item .nr .t2 {
+  color: white;
+  font-family: "TimesNewRomanPSMT";
+  opacity: 0.3;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.home .main .fiveIcon .item .nr .t3 {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  line-height: 36px;
+  margin-top: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 600ms;
+  text-align: center;
+}
+.home .main .fiveIcon .item:hover {
+  background-color: #E60012;
+}
+.home .main .fiveIcon .item:hover .spic {
+  opacity: 1;
+}
+.home .main .fiveIcon .item:hover .nr .pic img {
+  opacity: 1;
+}
+.home .main .fiveIcon .item:hover .nr .t3 {
+  transform: translateY(0);
+  opacity: 1;
+}
+.home .main .cases {
+  width: 90%;
+  margin: 80px auto;
+}
+.home .main .cases .t1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home .main .cases .t1 span {
+  color: #535353;
+  font-size: 60px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .cases .t1 span:nth-child(2) {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: "TimesNewRomanPSMT";
+}
+.home .main .cases .t2 {
+  color: #888888;
+  font-size: 24px;
+  text-align: center;
+  font-family: "HYQiHei-DZS";
+  margin-top: 10px;
+}
+.home .main .cases .allItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.home .main .cases .allItems .item {
+  width: 30%;
+  margin-right: 2.5%;
+  margin-top: 40px;
+  cursor: pointer;
+  position: relative;
+}
+.home .main .cases .allItems .item .pic {
+  overflow: hidden;
+  position: relative;
+}
+.home .main .cases .allItems .item .pic .content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D20010;
+  transition: all 600ms;
+  opacity: 0;
+}
+.home .main .cases .allItems .item .pic .content .nr {
+  width: 95%;
+  height: 91%;
+  margin: 2.5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+.home .main .cases .allItems .item .pic .content .nr .p1 {
+  font-size: 36px;
+  color: white;
+  font-family: "方正粗雅宋_GBK";
+}
+.home .main .cases .allItems .item .pic .content .nr .p2 {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  margin: 10px 0 30px 0;
+}
+.home .main .cases .allItems .item .pic .content .nr .jt {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+}
+.home .main .cases .allItems .item .pic .content .nr .jt img {
+  transition: all 600ms;
+  transition-delay: 300ms;
+}
+.home .main .cases .allItems .item .pic .pic1 {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 600ms;
+}
+.home .main .cases .allItems .item .pic:hover .content {
+  opacity: 0.9;
+}
+.home .main .cases .allItems .item .pic:hover .content .nr .jt img {
+  transform: translateX(10px);
+}
+.home .main .cases .allItems .item .title {
+  color: #333333;
+  font-size: 18px;
+  font-family: "MicrosoftYaHei";
+  margin: 30px 2.5% 10px 2.5%;
+  width: 95%;
+}
+.home .main .cases .allItems .item .des {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .main .cases .allItems .item .des .st {
+  color: #666666;
+  font-size: 14px;
+}
+.home .main .cases .more {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 80px auto;
+}
+.home .main .cases .more .a1 {
+  width: 300px;
+  height: 70px;
+  background: #D20010;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  font-family: "方正粗雅宋_GBK";
+}
+.home .main .cases .more .a1 div {
+  transform: translateY(-5px);
+  margin-left: 30px;
+}
+.home .main .cases .more .a2 {
+  width: 550px;
+  height: 66px;
+  background: #FFFFFF;
+  border: 2px solid #D20010;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+.home .main .cases .more .a2 span:nth-of-type(1) {
+  color: #D20010;
+  font-size: 36px;
+  font-family: "TimesNewRomanPSMT";
+  font-weight: bolder;
+  display: inline-block;
+  margin: 0 20px;
+}
+.home .main .cases .more .a2 span:nth-of-type(2) {
+  color: #333333;
+  font-size: 28px;
+  font-family: "方正粗雅宋_GBK";
+  font-weight: bolder;
+}
+.home .main .news {
+  width: 100%;
+  background: url("../images/nbg.png") no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+  padding-bottom: 0;
+}
+.home .main .news .t1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home .main .news .t1 span {
+  color: #535353;
+  font-size: 60px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .news .t1 span:nth-child(2) {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: "TimesNewRomanPSMT";
+}
+.home .main .news .t2 {
+  color: #888888;
+  font-size: 24px;
+  text-align: center;
+  font-family: "HYQiHei-DZS";
+  margin-top: 10px;
+}
+.home .main .news .nr {
+  width: 90%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+.home .main .news .nr .l {
+  width: 42%;
+  padding-right: 3%;
+  padding-top: 40px;
+}
+.home .main .news .nr .l .pic {
+  overflow: hidden;
+  cursor: pointer;
+}
+.home .main .news .nr .l .pic img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 600ms;
+}
+.home .main .news .nr .l .pic:hover img {
+  transform: scale(1.05);
+}
+.home .main .news .nr .l .text .p1 {
+  color: #333333;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin-top: 20px;
+}
+.home .main .news .nr .l .text .p2 {
+  color: #888888;
+  line-height: 30px;
+  font-family: "MicrosoftYaHei";
+  margin: 10px 0 20px 0;
+}
+.home .main .news .nr .l .text .time {
+  color: #333333;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .news .nr .r {
+  width: 55%;
+  border-left: 1px solid #DDDDDD;
+}
+.home .main .news .nr .r .item {
+  width: 80%;
+  padding: 20px 10%;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 40px;
+  cursor: pointer;
+}
+.home .main .news .nr .r .item .time {
+  color: #888888;
+  margin-top: 30px;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .news .nr .r .item .st {
+  color: #333333;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 30px 0 10px 0;
+  transition: all 600ms;
+}
+.home .main .news .nr .r .item .des {
+  color: #888888;
+  line-height: 25px;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .news .nr .r .item .more {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 170px;
+  height: 44px;
+  border: 1px solid #888888;
+  justify-content: center;
+  cursor: pointer;
+  color: #333333;
+  font-size: 14px;
+  font-family: "TimesNewRomanPSMT";
+  text-transform: uppercase;
+  margin-top: 40px;
+  transition: all 600ms;
+}
+.home .main .news .nr .r .item .more div {
+  position: relative;
+  margin-left: 20px;
+}
+.home .main .news .nr .r .item .more div img:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: all 600ms;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.home .main .news .nr .r .item .more div img:nth-child(2) {
+  display: block;
+  object-fit: contain;
+  transition: all 600ms;
+  opacity: 0;
+}
+.home .main .news .nr .r .item .more:hover {
+  border-color: #D20010;
+  color: #D20010;
+}
+.home .main .news .nr .r .item .more:hover div img:nth-child(1) {
+  opacity: 0;
+}
+.home .main .news .nr .r .item .more:hover div img:nth-child(2) {
+  opacity: 1;
+}
+.home .main .news .nr .r .item:hover .st {
+  color: #D20010;
+}
+.home .main .partner {
+  width: 90%;
+  margin: 80px auto;
+}
+.home .main .partner .t1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home .main .partner .t1 span {
+  color: #535353;
+  font-size: 60px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .partner .t1 span:nth-child(2) {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: "TimesNewRomanPSMT";
+}
+.home .main .partner .t2 {
+  color: #888888;
+  font-size: 24px;
+  text-align: center;
+  font-family: "HYQiHei-DZS";
+  margin-top: 10px;
+}
+.home .main .partner .allImgs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 80px auto;
+}
+.home .main .partner .allImgs .item {
+  border: 1px solid #EEEEEE;
+  width: 14%;
+  text-align: center;
+  padding: 20px 0;
+  cursor: pointer;
+}
+.home .main .partner .allImgs .item img {
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 600ms;
+}
+.home .main .partner .allImgs .item:hover img {
+  transform: scale(1.05);
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r a {
+  color: #AAAAAA;
+}
+
+/*# sourceMappingURL=index.css.map */

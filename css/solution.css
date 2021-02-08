@@ -1,0 +1,650 @@
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.home .banner .bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .banner .bg img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.home .banner .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.home .banner .text .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .banner .text .p2 {
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .main {
+  width: 100%;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .focus {
+  width: 60%;
+  margin: 80px auto;
+}
+.home .main .focus .d1 {
+  width: 100%;
+  position: relative;
+}
+.home .main .focus .d1 .l {
+  width: 60%;
+}
+.home .main .focus .d1 .l .p1 {
+  color: #222222;
+  font-size: 36px;
+  font-family: "SOURCEHANSANSCN-HEAVY";
+}
+.home .main .focus .d1 .l .p2 {
+  color: #666666;
+  font-size: 14px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  line-height: 30px;
+  margin: 40px 0;
+}
+.home .main .focus .d1 .r {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.home .main .focus .d1 .r svg {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+.home .main .focus .d2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 60px auto;
+}
+.home .main .focus .d2 .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .main .focus .d2 .item .im {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .main .focus .d2 .item .im .pic {
+  position: relative;
+  display: inline-block;
+}
+.home .main .focus .d2 .item .im .pic img {
+  display: block;
+  transition: all 600ms;
+}
+.home .main .focus .d2 .item .im .pic img:nth-of-type(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+.home .main .focus .d2 .item p {
+  color: black;
+  font-size: 18px;
+  font-family: "MicrosoftYaHei";
+  margin: 30px 0;
+  transition: all 600ms;
+}
+.home .main .focus .d2 .item:hover .pic img:nth-of-type(1) {
+  opacity: 0;
+}
+.home .main .focus .d2 .item:hover .pic img:nth-of-type(2) {
+  opacity: 1;
+}
+.home .main .focus .d2 .item:hover p {
+  color: #B80211;
+}
+.home .main .advantge {
+  width: 100%;
+  background-color: #0C0D24;
+  position: relative;
+  overflow: hidden;
+}
+.home .main .advantge .cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  height: 120px;
+  width: 120px;
+  transition: none;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+.home .main .advantge .cursor .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.home .main .advantge .cursor .circle {
+  -webkit-transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  left: 0;
+  top: 0;
+  mix-blend-mode: exclusion;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  -webkit-transform: scale(0.15);
+  transform: scale(0.15);
+}
+.home .main .advantge .cursor .circle .cursor_text {
+  display: block;
+  font-size: 20px;
+  color: white;
+  opacity: 0;
+}
+.home .main .advantge .is-active .inner .circle {
+  background-color: white;
+  opacity: 1;
+  transform: scale(1);
+}
+.home .main .advantge .nr {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  pointer-events: none;
+  align-items: center;
+}
+.home .main .advantge .nr .ltext {
+  width: 50%;
+}
+.home .main .advantge .nr .ltext .title {
+  position: relative;
+  padding-bottom: 40px;
+}
+.home .main .advantge .nr .ltext .title::after {
+  content: "";
+  display: inline-block;
+  width: 81px;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.home .main .advantge .nr .ltext .title p {
+  color: white;
+}
+.home .main .advantge .nr .ltext .title p:nth-child(1) {
+  font-size: 34px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+}
+.home .main .advantge .nr .ltext .title p:nth-child(2) {
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 5px;
+}
+.home .main .advantge .nr .ltext .st {
+  margin-top: 100px;
+}
+.home .main .advantge .nr .ltext .st p {
+  color: white;
+}
+.home .main .advantge .nr .ltext .st p:nth-child(1) {
+  font-size: 30px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+}
+.home .main .advantge .nr .ltext .st p:nth-child(2) {
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin-top: 10px;
+}
+.home .main .advantge .nr .rcanvas {
+  pointer-events: none;
+  width: 50%;
+}
+.home .main .chose {
+  background-color: #F7F8FA;
+  padding: 80px 0;
+  padding-bottom: 40px;
+}
+.home .main .chose .title {
+  text-align: center;
+  pointer-events: none;
+}
+.home .main .chose .title .p1 {
+  color: #222222;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .chose .title .p2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 30px;
+}
+.home .main .chose .allItems {
+  width: 60%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.home .main .chose .allItems .item {
+  width: 45%;
+  background-color: white;
+  padding: 60px 2%;
+  position: relative;
+  margin-bottom: 25px;
+}
+.home .main .chose .allItems .item span {
+  position: absolute;
+  right: 5%;
+  top: 8%;
+  color: #E9E9E9;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .chose .allItems .item .p1 {
+  color: #333333;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+}
+.home .main .chose .allItems .item .p2 {
+  color: #666666;
+  font-size: 14px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin-top: 5px;
+}
+.home .main .service {
+  width: 100%;
+  background: url("../images/fBg.png") no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+}
+.home .main .service .title {
+  text-align: center;
+  pointer-events: none;
+}
+.home .main .service .title .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .service .title .p2 {
+  color: #888888;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 30px;
+}
+.home .main .service .allItems {
+  width: 70%;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 60px;
+  position: relative;
+}
+.home .main .service .allItems .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.home .main .service .allItems .item .pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #8C111B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 600ms;
+}
+.home .main .service .allItems .item .text {
+  font-size: 18px;
+  font-family: "MicrosoftYaHei";
+  position: relative;
+  transition: all 600ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+}
+.home .main .service .allItems .item .text .circle {
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 600ms;
+}
+.home .main .service .allItems .item .text .circle span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 600ms;
+}
+.home .main .service .allItems .item .text .circle::before, .home .main .service .allItems .item .text .circle::after {
+  content: "";
+  display: inline-block;
+  width: 98px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+}
+.home .main .service .allItems .item .text .circle::before {
+  content: "";
+  display: inline-block;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home .main .service .allItems .item .text .circle::after {
+  content: "";
+  display: inline-block;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home .main .service .allItems .item .text p {
+  opacity: 0.54;
+  color: white;
+  font-family: "MicrosoftYaHei";
+  font-size: 18px;
+}
+.home .main .service .allItems .item:last-child .text p {
+  transform: scale(1.3);
+}
+.home .main .service .allItems .active .pic {
+  background-color: #B80211;
+}
+.home .main .service .allItems .active .text .circle {
+  border-color: white;
+  transform: scale(1.2);
+}
+.home .main .service .allItems .active .text .circle span {
+  opacity: 1;
+}
+.home .main .service .allItems .active .text p {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+@media screen and (max-width: 1440px) {
+  .home .main {
+    overflow: hidden;
+  }
+  .home .main .focus {
+    width: 70%;
+  }
+  .home .main .advantge .nr {
+    width: 70%;
+  }
+  .home .main .advantge .nr .rcanvas canvas {
+    height: 600px;
+  }
+  .home .main .chose .allItems {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=solution.css.map */

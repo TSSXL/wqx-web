@@ -1,0 +1,893 @@
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.home .banner .mouser {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 999;
+  transform: translate(calc(1px * var(--mouse-x, 50vw)), calc(1px * var(--mouse-y, 50vh))) translate(-50%, -50%);
+  width: 3.4vw;
+  height: 3.4vw;
+  position: absolute;
+  background-color: transparent;
+}
+.home .banner .mouser img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+}
+.home .banner .mask-box {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+}
+.home .banner .mask-box .mask-con {
+  transform: translate(calc(1px * var(--mouse-x, 50vw)), calc(1px * var(--mouse-y, 50vh))) translate(-50%, -50%);
+  position: absolute;
+  opacity: 0.92;
+  width: 1332px;
+  left: 0;
+  top: 0;
+  height: 976px;
+}
+.home .banner .mask-box .mask-con .m-mask {
+  position: absolute;
+  width: 5172px;
+  left: -1920px;
+  top: -1010px;
+}
+.home .banner .bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .banner .bg img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.home .banner .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.home .banner .text .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .banner .text .p2 {
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .main {
+  width: 100%;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .develop {
+  width: 100%;
+  margin: 80px auto;
+  position: relative;
+  padding: 100px 0;
+}
+.home .main .develop .title {
+  text-align: center;
+}
+.home .main .develop .title p:nth-child(1) {
+  color: #535353;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .develop .title p:nth-child(2) {
+  color: #888888;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 30px;
+}
+.home .main .develop .des {
+  color: #333333;
+  font-size: 22px;
+  font-family: "MicrosoftYaHei";
+  line-height: 44px;
+  margin: 60px auto;
+  text-align: center;
+  width: 50%;
+}
+.home .main .develop .allItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home .main .develop .allItems .item {
+  margin: 0 2%;
+  text-align: center;
+}
+.home .main .develop .allItems .item .pic {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .main .develop .allItems .item p {
+  color: #333333;
+  font-size: 22px;
+  font-family: "MicrosoftYaHei";
+  margin: 20px auto;
+}
+.home .main .develop .y1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: run 2s infinite linear;
+}
+.home .main .develop .y2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: run 2s infinite linear;
+}
+.home .main .develop .y3 {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  animation: run 2s infinite linear;
+}
+@keyframes run {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(15px, 15px);
+  }
+  75% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(1px, 1px);
+  }
+}
+.home .main .need {
+  width: 100%;
+  background: url("../images/webBg.png") no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+}
+.home .main .need .title {
+  text-align: center;
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .need .title p:nth-child(1) {
+  font-size: 48px;
+}
+.home .main .need .title p:nth-child(2) {
+  font-size: 24px;
+  margin-top: 30px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  opacity: 0.8;
+}
+.home .main .need .content {
+  width: 60%;
+  margin: 80px auto;
+  position: relative;
+}
+.home .main .need .content img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  animation: move 4s linear infinite;
+}
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(15px, 15px);
+  }
+  75% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+.home .main .need .content .item {
+  width: 299px;
+  height: 1px;
+  position: absolute;
+  left: 24%;
+  top: 0;
+}
+.home .main .need .content .item p {
+  color: white;
+  font-size: 20px;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .need .content .item2 {
+  width: 350px;
+  height: 1px;
+  position: absolute;
+  left: -2%;
+  top: 31%;
+}
+.home .main .need .content .item2 p {
+  color: white;
+  font-size: 20px;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item2 .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item2 .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .need .content .item3 {
+  width: 350px;
+  height: 1px;
+  position: absolute;
+  left: 6%;
+  top: 68%;
+}
+.home .main .need .content .item3 p {
+  color: white;
+  font-size: 20px;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item3 .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item3 .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .need .content .item4 {
+  width: 300px;
+  height: 1px;
+  position: absolute;
+  right: 15%;
+  top: 72%;
+}
+.home .main .need .content .item4 p {
+  color: white;
+  font-size: 20px;
+  text-align: right;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item4 .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item4 .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .need .content .item5 {
+  width: 300px;
+  height: 1px;
+  position: absolute;
+  right: -2%;
+  top: 38%;
+}
+.home .main .need .content .item5 p {
+  color: white;
+  font-size: 20px;
+  text-align: right;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item5 .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item5 .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .need .content .item6 {
+  width: 300px;
+  height: 1px;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+}
+.home .main .need .content .item6 p {
+  color: white;
+  font-size: 20px;
+  text-align: right;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .need .content .item6 .line {
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+}
+.home .main .need .content .item6 .line::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+.home .main .dom2 {
+  width: 90%;
+  padding: 200px 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 200px auto;
+  align-items: center;
+  position: relative;
+}
+.home .main .dom2 .text {
+  width: 48%;
+}
+.home .main .dom2 .text .t1 {
+  color: #535353;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+  position: relative;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+.home .main .dom2 .text .t1::after {
+  width: 56px;
+  height: 2px;
+  background-color: #FF0808;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: inherit;
+}
+.home .main .dom2 .text .t2 {
+  color: #535353;
+  font-size: 40px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 40px 0px;
+}
+.home .main .dom2 .text .des {
+  color: #535353;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  line-height: 48px;
+  margin: 30px auto;
+}
+.home .main .dom2 .pics {
+  position: absolute;
+  right: -100px;
+  top: 10%;
+}
+.home .main .dom2 .pics img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+.home .main .dom2 .tp {
+  position: absolute;
+  right: 16%;
+  top: 0;
+}
+.home .main .dom2 .bp {
+  position: absolute;
+  right: 11%;
+  bottom: 0;
+}
+.home .main .water {
+  width: 100%;
+  background-color: black;
+  padding: 200px 0;
+  position: relative;
+}
+.home .main .water .content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  pointer-events: none;
+  align-items: center;
+}
+.home .main .water .content .left {
+  width: 50%;
+}
+.home .main .water .content .left .t1 {
+  color: white;
+  font-size: 24px;
+  font-family: "FZCYSK--GBK1-0";
+  position: relative;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+.home .main .water .content .left .t1::after {
+  content: "";
+  display: inline-block;
+  width: 56px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #B80211;
+}
+.home .main .water .content .left .t2 {
+  color: white;
+  font-size: 40px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 30px auto;
+}
+.home .main .water .content .left .allItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.home .main .water .content .left .allItems .item {
+  width: 45%;
+  margin-top: 40px;
+}
+.home .main .water .content .left .allItems .item .pt {
+  color: white;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+}
+.home .main .water .content .left .allItems .item .des {
+  color: white;
+  font-size: 14px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  margin: 20px auto;
+}
+.home .main .water .content .right {
+  width: 40%;
+}
+.home .main .water .content .right img {
+  width: 100%;
+}
+.home .main .water .cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  height: 120px;
+  width: 120px;
+  transition: none;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+.home .main .water .cursor .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.home .main .water .cursor .circle {
+  -webkit-transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  left: 0;
+  top: 0;
+  mix-blend-mode: exclusion;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  -webkit-transform: scale(0.15);
+  transform: scale(0.15);
+}
+.home .main .water .cursor .circle .cursor_text {
+  display: block;
+  font-size: 20px;
+  color: white;
+  opacity: 0;
+}
+.home .main .water .is-active .inner .circle {
+  background-color: white;
+  opacity: 1;
+  transform: scale(1);
+}
+.home .main .dom3 {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 200px auto;
+  align-items: center;
+}
+.home .main .dom3 .l {
+  width: 48%;
+}
+.home .main .dom3 .l img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+.home .main .dom3 .text {
+  width: 48%;
+}
+.home .main .dom3 .text .t1 {
+  color: #535353;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+  position: relative;
+  padding-bottom: 30px;
+  text-align: right;
+}
+.home .main .dom3 .text .t1::after {
+  width: 56px;
+  height: 2px;
+  background-color: #FF0808;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  display: inherit;
+}
+.home .main .dom3 .text .t2 {
+  color: #535353;
+  font-size: 40px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  text-align: right;
+  margin: 40px 0px;
+}
+.home .main .dom3 .text .des {
+  color: #535353;
+  font-size: 24px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  line-height: 48px;
+  margin: 30px auto;
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+@media screen and (max-width: 1440px) {
+  .home .main {
+    overflow: hidden;
+  }
+  .home .main .need .content {
+    width: 70%;
+  }
+  .home .main .need .content .item5 {
+    right: -10%;
+  }
+  .home .main .need .content .item6 {
+    right: 3%;
+  }
+  .home .main .dom2 .tp {
+    width: 50%;
+    right: 8%;
+  }
+  .home .main .dom2 .tp img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  .home .main .dom2 .bp {
+    width: 50%;
+    right: 8%;
+  }
+  .home .main .dom2 .bp img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+/*# sourceMappingURL=webs.css.map */

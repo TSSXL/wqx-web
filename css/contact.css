@@ -1,0 +1,444 @@
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.home .banner .bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .banner .bg img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.home .banner .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.home .banner .text .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .banner .text .p2 {
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .banner .swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #EEEEEE;
+  border-radius: 50%;
+  opacity: 1;
+  position: relative;
+  margin-bottom: 30px;
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet::before {
+  width: 14px;
+  height: 14px;
+  background: #EEEEEE;
+  transform: scale(0);
+  border-radius: 50%;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  display: inline-block;
+  content: "";
+  transition: all 600ms;
+  opacity: 0.2;
+}
+.home .banner .swiper-pagination .swiper-pagination-bullet-active::before {
+  transform: scale(1);
+}
+.home .main {
+  width: 100%;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .cInfo {
+  width: 70%;
+  margin: 80px auto;
+}
+.home .main .cInfo .d1 {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #DDDDDD;
+}
+.home .main .cInfo .d1 .item {
+  width: 50%;
+  padding: 80px 0;
+}
+.home .main .cInfo .d1 .item .t1 {
+  color: #333333;
+  font-size: 36px;
+  font-family: "MicrosoftYaHei";
+  margin: 30px 0;
+  font-weight: bold;
+}
+.home .main .cInfo .d1 .item .t2 {
+  color: #696969;
+  font-family: "MicrosoftYaHei";
+}
+.home .main .cInfo .d1 .item:nth-child(1) {
+  border-right: 1px solid #DDDDDD;
+}
+.home .main .cInfo .d1 .item:nth-child(2) {
+  margin-left: 5%;
+}
+.home .main .cInfo .d1 .item:nth-child(2) .t1 {
+  font-weight: bolder;
+  color: #333333;
+}
+.home .main .cInfo .d2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 60px 0;
+}
+.home .main .cInfo .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .main .cInfo .d2 .item .text {
+  margin-left: 20px;
+  font-size: 18px;
+  font-family: "MicrosoftYaHei";
+  font-weight: bold;
+  line-height: 30px;
+}
+.home .main .cInfo .message {
+  width: 100%;
+  margin: 60px auto;
+}
+.home .main .cInfo .message .p1 {
+  color: #333333;
+  font-size: 60px;
+  font-style: italic;
+  font-family: "Impact";
+}
+.home .main .cInfo .message .form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+.home .main .cInfo .message .form .item {
+  width: 35%;
+  margin-right: 3%;
+  margin-bottom: 30px;
+}
+.home .main .cInfo .message .form .item input {
+  width: 100%;
+  border: none;
+  color: #AAAAAA;
+  border-bottom: 1px solid #DDDDDD;
+  height: 45px;
+}
+.home .main .cInfo .message .btn {
+  display: inline-block;
+  background-color: #2F2E35;
+  width: 220px;
+  text-align: center;
+  padding: 15px 0;
+  color: white;
+  font-size: 18px;
+  transform: skew(-15deg);
+  cursor: pointer;
+}
+.home .main .cInfo .message .btn span {
+  transform: skew(15deg);
+  display: inline-block;
+}
+.home .main #allmap {
+  width: 100%;
+  margin: 60px auto;
+  margin-bottom: 0;
+  position: relative;
+}
+.home .main #allmap img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.home .main #allmap .point {
+  background-color: #FF0808;
+  position: absolute;
+  left: 52%;
+  top: 55%;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+.home .main #allmap .point::before, .home .main #allmap .point::after {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  background-color: #FF0808;
+}
+.home .main #allmap .point::before {
+  animation: scale 2s infinite;
+}
+.home .main #allmap .point::after {
+  animation: scale2 2s infinite;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+@keyframes scale2 {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(12);
+    opacity: 0;
+  }
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+
+/*# sourceMappingURL=contact.css.map */

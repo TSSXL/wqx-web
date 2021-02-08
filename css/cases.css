@@ -1,0 +1,413 @@
+@charset "UTF-8";
+.home {
+  width: 100%;
+  position: relative;
+}
+.home .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  transition: all 600ms;
+  flex-direction: row;
+}
+.home .header .logo {
+  display: inline-block;
+  margin: 20px;
+  padding-top: 10px;
+}
+.home .header .links {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+.home .header .links ul {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .header .links ul li {
+  cursor: pointer;
+}
+.home .header .links ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .links ul li a span:nth-child(1) {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 600ms;
+  transform: translateY(4px);
+}
+.home .header .links ul li a span:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  position: absolute;
+  background-color: #F39800;
+  height: 1px;
+  transition: all 600ms;
+  display: none;
+}
+.home .header .links ul li a span:nth-child(2) {
+  color: #666666;
+  font-size: 12px;
+  font-family: "gothambook";
+  text-transform: uppercase;
+  transition: all 600ms;
+  transform: translateY(-4px);
+}
+.home .header .links ul li a:hover span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul li a:hover span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul li a:hover span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links ul .active a span:nth-child(1) {
+  transform: translateY(0);
+}
+.home .header .links ul .active a span:nth-child(1)::after {
+  display: block;
+}
+.home .header .links ul .active a span:nth-child(2) {
+  transform: translateY(0);
+  color: white;
+}
+.home .header .links .phone a {
+  display: flex;
+  flex-direction: column;
+}
+.home .header .links .phone a span:nth-child(1) {
+  color: #F39800;
+  font-size: 18px;
+  font-family: "gothambook";
+  font-weight: bolder;
+}
+.home .header .links .phone a span:nth-child(2) {
+  color: #666666;
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+  display: inline-block;
+  margin-top: 4px;
+}
+.home .activeHeader {
+  background-color: black;
+  transform: translateY(-10px);
+}
+.home .banner {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.home .banner .bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .banner .bg img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.home .banner .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.home .banner .text .p1 {
+  color: white;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .banner .text .p2 {
+  color: white;
+  font-family: "FZCYSK--GBK1-0";
+  margin-top: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.home .banner .mouse {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home .banner .mouse::after {
+  height: 54px;
+  content: "";
+  display: inline-block;
+  border: 1px dashed white;
+  margin-top: 10px;
+}
+.home .main {
+  width: 100%;
+  margin: 80px auto;
+}
+.home .main div {
+  opacity: 0;
+  transition: all 600ms;
+  transform: translateY(20px);
+}
+.home .main .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home .main .navList {
+  width: 100%;
+  text-align: center;
+}
+.home .main .navList .t1 {
+  color: #535353;
+  font-size: 48px;
+  font-family: "FZCYSK--GBK1-0";
+}
+.home .main .navList .types {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.home .main .navList .types a {
+  display: inline-block;
+  margin: 0 20px;
+  color: #666666;
+  font-size: 14px;
+  font-family: "SOURCEHANSANSCN-REGULAR";
+  position: relative;
+  padding: 3px 5px;
+}
+.home .main .navList .types a::after {
+  content: "";
+  display: inline-block;
+  background-color: #333333;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transition: all 600ms;
+  transform: translateY(10px);
+  opacity: 0;
+}
+.home .main .navList .types a:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+.home .main .navList .types .active::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+.home .main .allItems {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 60px auto;
+  margin-top: 20px;
+}
+.home .main .allItems .item {
+  width: 30%;
+  margin-left: 2.5%;
+  margin-top: 40px;
+  cursor: pointer;
+  position: relative;
+}
+.home .main .allItems .item .pic {
+  overflow: hidden;
+  position: relative;
+}
+.home .main .allItems .item .pic .content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D20010;
+  transition: all 600ms;
+  opacity: 0;
+}
+.home .main .allItems .item .pic .content .nr {
+  width: 95%;
+  height: 91%;
+  margin: 2.5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+.home .main .allItems .item .pic .content .nr .p1 {
+  font-size: 36px;
+  color: white;
+  font-family: "方正粗雅宋_GBK";
+}
+.home .main .allItems .item .pic .content .nr .p2 {
+  color: white;
+  font-family: "MicrosoftYaHei";
+  margin: 10px 0 30px 0;
+}
+.home .main .allItems .item .pic .content .nr .jt {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+}
+.home .main .allItems .item .pic .content .nr .jt img {
+  transition: all 600ms;
+  transition-delay: 300ms;
+}
+.home .main .allItems .item .pic .pic1 {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 600ms;
+}
+.home .main .allItems .item .pic:hover .content {
+  opacity: 0.9;
+}
+.home .main .allItems .item .pic:hover .content .nr .jt img {
+  transform: translateX(10px);
+}
+.home .main .allItems .item .title {
+  color: #333333;
+  font-size: 18px;
+  font-family: "MicrosoftYaHei";
+  margin: 30px 2.5% 10px 2.5%;
+  width: 95%;
+}
+.home .main .allItems .item .des {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .main .allItems .item .des .st {
+  color: #666666;
+  font-size: 14px;
+}
+.home .main .load {
+  width: 146px;
+  height: 53px;
+  border: 1px solid #080103;
+  margin: 60px auto;
+  text-align: center;
+  line-height: 53px;
+  font-size: 18px;
+  font-family: "TimesNewRomanPSMT";
+  text-transform: uppercase;
+  transition: all 600ms;
+  cursor: pointer;
+}
+.home .main .load:hover {
+  background-color: #D20010;
+  color: white;
+  border-color: #D20010;
+}
+.home .foot {
+  width: 90%;
+  padding: 50px 5%;
+  background-color: #121212;
+}
+.home .foot .d1 {
+  text-align: center;
+}
+.home .foot .d1 p {
+  color: #AAAAAA;
+  font-size: 30px;
+  font-family: "TimesNewRomanPSMT";
+  margin-top: 20px;
+}
+.home .foot .d2 {
+  padding: 40px 0;
+  margin: 60px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d2 .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .foot .d2 .item .pic {
+  width: 60px;
+  height: 60px;
+  background: #121212;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .foot .d2 .item .text {
+  margin-left: 20px;
+}
+.home .foot .d2 .item .text p {
+  font-size: 14px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d2 .item .text p:nth-child(1) {
+  color: #888888;
+}
+.home .foot .d2 .item .text p:nth-child(2) {
+  color: #666666;
+}
+.home .foot .d3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .foot .d3 .l {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+  line-height: 25px;
+}
+.home .foot .d3 .l a {
+  color: #555555;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+.home .foot .d3 .r {
+  color: #AAAAAA;
+  font-size: 13px;
+  font-family: "MicrosoftYaHei";
+}
+
+/*# sourceMappingURL=cases.css.map */

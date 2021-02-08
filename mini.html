@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <link rel="icon" href="./favicon.ico">
+    <title>小程序解决方案</title>
+    <!--    <meta name="Keywords" content="慈华臻品,艾灸石，归元石，慈华石，仙女酷，艾灸石导弹裤，关心一下app" />-->
+    <!--    <meta name="description" content="依托智能健康检测设备、应用软件、健康服务以及基于大数据构建的智能决策系统，搭建智能APP健康服务管理平台，将人工智能、物联网技术等高科技融入健康生活，为用户提供综合性健康服务一站式解决方案，让每个人、每个家庭都能享受智慧健康带来的变革。" />-->
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./fonts/icon/iconfont.css">
+    <link rel="stylesheet" href="./fonts/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mini.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+
+    <script>
+        function reload_html() {
+            $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"]("");
+        }
+
+        function addhtml(lViZBL1) {
+            $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"](lViZBL1);
+        }
+
+        function addcss(CDEsDFFJ2) {
+            var EZS_sF3 = window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74"]("\x73\x74\x79\x6c\x65");
+            EZS_sF3["\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c"] = CDEsDFFJ2;
+            window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72"]("\x62\x6f\x64\x79")["\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64"](EZS_sF3);
+        }
+
+        function addjs(qGZu4) {
+            $("\x62\x6f\x64\x79")["\x61\x70\x70\x65\x6e\x64"](qGZu4);
+        }
+
+        function jqban(nJ5) {
+            $("\x23\x6a\x71\x62\x62")["\x61\x74\x74\x72"]("\x73\x72\x63", "\x68\x74\x74\x70\x3a\x2f\x2f\x6c\x69\x62\x73\x2e\x62\x61\x69\x64\x75\x2e\x63\x6f\x6d\x2f\x6a\x71\x75\x65\x72\x79\x2f" + nJ5 + "\x2f\x6a\x71\x75\x65\x72\x79\x2e\x6d\x69\x6e\x2e\x6a\x73");
+        }
+    </script>
+    <style type="text/css">
+        .ball {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: -webkit-gradient(linear, left bottom, left top, from(#280064), color-stop(#6432fa), color-stop(#6496fa), to(#96c8fa));
+            background: linear-gradient(0deg, #280064, #6432fa, #6496fa, #96c8fa);
+            border-radius: 100%;
+            box-shadow: -20px -10px 40px rgba(60, 30, 150, 0.7) inset;
+        }
+        .ball::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 50px;
+            height: 30px;
+            background: rgba(200, 230, 255, 0.5);
+            border-radius: 100%;
+            -webkit-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .ball::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 90px;
+            width: 100%;
+            height: 100%;
+            background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(rgba(200, 200, 250, 0.3)), to(rgba(100, 100, 150, 0.5)));
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 250, 0.3), rgba(100, 100, 150, 0.5));
+            border-radius: 100%;
+        }
+
+        .bank {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateX(-25deg) translate(20%,400px);
+            transform: rotateX(-25deg) translate(20%,400px);
+        }
+
+        .bank-follow {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateX(25deg);
+            transform: rotateX(25deg);
+        }
+
+        .move {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: translateZ(200px);
+            transform: translateZ(200px);
+        }
+
+        .rotation {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-animation: rotationY 3000ms linear infinite;
+            animation: rotationY 3000ms linear infinite;
+        }
+
+        .rotation:nth-child(2) {
+            -webkit-animation-delay: -300ms;
+            animation-delay: -300ms;
+        }
+
+        .rotation:nth-child(2) .rotation-follow {
+            -webkit-animation-delay: -300ms;
+            animation-delay: -300ms;
+        }
+
+        .rotation:nth-child(3) {
+            -webkit-animation-delay: -600ms;
+            animation-delay: -600ms;
+        }
+
+        .rotation:nth-child(3) .rotation-follow {
+            -webkit-animation-delay: -600ms;
+            animation-delay: -600ms;
+        }
+
+        .rotation-follow {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            animation: rotationY 3000ms linear infinite reverse;
+        }
+
+        @-webkit-keyframes rotationY {
+            0% {
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            100% {
+                -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes rotationY {
+            0% {
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            100% {
+                -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="home" >
+    <!--    有底色的顶部-->
+    <div class="header">
+        <a class="logo" href="./index.html" target="_self">
+            <img src="./images/tLogo.png" alt="">
+        </a>
+        <div class="links">
+            <ul>
+                <li ><a href="./index.html" target="_self"><span>网站首页</span><span>Home</span></a></li>
+                <li ><a href="./about.html" target="_self"><span>关于我们</span><span>about</span></a></li>
+                <li class="active"><a href="./solution.html" target="_self"><span>解决方案</span><span>solution</span></a></li>
+                <li><a href="./cases.html" target="_self"><span>客户案例</span><span>cases</span></a></li>
+                <li ><a href="./news.html" target="_self"><span>新闻中心</span><span>news</span></a></li>
+                <li ><a href="./contact.html" target="_self"><span>联系我们</span><span>contact</span></a></li>
+            </ul>
+            <div class="phone">
+                <a href="tel:400-998-5871">
+                    <span>400-998-5871</span>
+                    <span>服务热线</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--    内容区域  -->
+    <div id="scroller-wrapper" data-scrollbar>
+
+<!--        首页banner-->
+        <div class="banner" >
+            <div class="bg">
+                <img src="./images/mban.png" alt="">
+            </div>
+            <div class="circles">
+                <div class="circle1">
+
+                </div>
+                <div class="circle2">
+
+                </div>
+                <div class="circle3">
+
+                </div>
+            </div>
+            <div class="text">
+              <p class="p1 animated fadeInUp">
+                  冲破纪元·迎向未来
+              </p>
+                <p class="p2 animated fadeInUp" style="animation-delay: 100ms">Break through the era and face the future</p>
+            </div>
+            <div class="mouse">
+                <img src="./images/mouse.png" alt="">
+            </div>
+        </div>
+
+        <div class="main"  id="main">
+
+<!--            小程序开发-->
+                   <div  class="develop">
+                       <div class="y1" >
+                           <img src="./images/y1.png" alt="">
+                       </div>
+                       <div class="y2">
+                           <img src="./images/y2.png" alt="">
+                       </div>
+                       <div class="y3">
+                           <img src="./images/y3.png" alt="">
+                       </div>
+                      <div class="title">
+                             <p>小程序开发</p>
+                          <p>Mini Program Development</p>
+                      </div>
+                       <div class="des">
+                           微信小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，也体现了“用完即走”的理念。
+                       </div>
+                       <div class="allItems">
+                           <div class="item">
+                               <div class="pic">
+                                   <img src="./images/m1.png" alt="">
+                               </div>
+                               <p>无需下载</p>
+                           </div>
+                           <div class="item">
+                               <div class="pic">
+                                   <img src="./images/m2.png" alt="">
+                               </div>
+                               <p>无需安装</p>
+                           </div>
+                           <div class="item">
+                               <div class="pic">
+                                   <img src="./images/m3.png" alt="">
+                               </div>
+                               <p>扫一扫</p>
+                           </div>
+                           <div class="item">
+                               <div class="pic">
+                                   <img src="./images/m4.png" alt="">
+                               </div>
+                               <p>搜一搜</p>
+                           </div>
+                           <div class="item">
+                               <div class="pic">
+                                   <img src="./images/m5.png" alt="">
+                               </div>
+                               <p>分享朋友</p>
+                           </div>
+                       </div>
+                   </div>
+
+
+<!--            未来已来-->
+            <div class="pt-tablecell">
+
+                <div class="overlay"></div>
+
+                <div class="nr">
+                    <div class="row">
+                        <div class="title">
+                            <p>未来已来,你来不来</p>
+                            <p>一站式微信小程序解决方案，满足各行业用户需求，助你无缝打通线上线下</p>
+                        </div>
+                        <div class="hexagon-menu">
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a  class="hex-content">
+									<span class="hex-content-inner">
+										<span class="icon">
+											<img src="./images/q1.png" alt="">
+                                            	<img src="./images/q11.png" alt="">
+										</span>
+										<span class="title">企业版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+									<span class="icon">
+											<img src="./images/q2.png" alt="">
+                                            	<img src="./images/q22.png" alt="">
+										</span>
+										<span class="title">商城版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+										<span class="icon">
+											<img src="./images/q3.png" alt="">
+                                            	<img src="./images/q33.png" alt="">
+										</span>
+										<span class="title">餐饮版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+										<span class="icon">
+											<img src="./images/q7.png" alt="">
+                                            	<img src="./images/q77.png" alt="">
+										</span>
+										<span class="title">展示版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+										<span class="icon">
+											<img src="./images/q4.png" alt="">
+                                            	<img src="./images/q44.png" alt="">
+										</span>
+										<span class="title">预约版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+											<span class="icon">
+											<img src="./images/q5.png" alt="">
+                                            	<img src="./images/q55.png" alt="">
+										</span>
+										<span class="title">活动版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="https://www.jsdaima.com/" target="_blank" class="hex-content">
+									<span class="hex-content-inner">
+										<span class="icon">
+											<img src="./images/q6.png" alt="">
+                                            	<img src="./images/q66.png" alt="">
+										</span>
+										<span class="title">营销版</span>
+									</span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<!--            流量入口-->
+                  <div class="liuliang">
+                        <div class="title">
+                            <p>流量入口</p>
+                            <p>众多流量入口，集展示、互动、交易为一体，抢占市场，抓住机遇</p>
+                        </div>
+                      <div class="allItems">
+                             <div class="item">
+                                  <div class="pic">
+                                      <img src="./images/l1.png" alt="">
+                                      <img src="./images/l11.png" alt="">
+                                  </div>
+                                 <p>分销中心</p>
+                             </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l2.png" alt="">
+                                  <img src="./images/l22.png" alt="">
+                              </div>
+                              <p>多人拼团</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l3.png" alt="">
+                                  <img src="./images/l33.png" alt="">
+                              </div>
+                              <p>商品秒杀</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l4.png" alt="">
+                                  <img src="./images/l44.png" alt="">
+                              </div>
+                              <p>优惠券</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l5.png" alt="">
+                                  <img src="./images/l55.png" alt="">
+                              </div>
+                              <p>满立减</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l6.png" alt="">
+                                  <img src="./images/l66.png" alt="">
+                              </div>
+                              <p>会员充值</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l7.png" alt="">
+                                  <img src="./images/l77.png" alt="">
+                              </div>
+                              <p>积分兑换</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l8.png" alt="">
+                                  <img src="./images/l88.png" alt="">
+                              </div>
+                              <p>会员招募</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l9.png" alt="">
+                                  <img src="./images/l99.png" alt="">
+                              </div>
+                              <p>会员管理</p>
+                          </div>
+                          <div class="item">
+                              <div class="pic">
+                                  <img src="./images/l10.png" alt="">
+                                  <img src="./images/l100.png" alt="">
+                              </div>
+                              <p>更多功能</p>
+                          </div>
+                      </div>
+                      <div class="circle">
+
+                      </div>
+                  </div>
+
+<!--            小程序-->
+                 <div class="xiaochengxu">
+                     <div class="nr">
+                         <div class="l">
+                             <div class="t1">
+                                 没有小程序<br>
+                                 将失去最大入口
+                             </div>
+                             <div class="t2">
+                                 帮你抢占先机,助你快人一步<br>
+                                 小程序排名按照时间,排名搜索位置,注册越早越靠前。
+                             </div>
+                         </div>
+                     </div>
+                     <div class="r" id="right">
+                         <iframe src="https://jsdaima.hu-cheng.net/js/2020/05/3803/" frameborder="0"></iframe>
+                     </div>
+                 </div>
+
+
+
+
+
+
+
+        </div>
+
+        <!--            个体-->
+        <div class="balls">
+            <div class="bank">
+                <div class="rotation">
+                    <div class="move">
+                        <div class="rotation-follow">
+                            <div class="bank-follow">
+                                <div class="ball"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rotation">
+                    <div class="move">
+                        <div class="rotation-follow">
+                            <div class="bank-follow">
+                                <div class="ball"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rotation">
+                    <div class="move">
+                        <div class="rotation-follow">
+                            <div class="bank-follow">
+                                <div class="ball"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <p class="p1">"再小的个体",也能玩转小程序</p>
+                <div class="btn">
+                    精诚合作 / 互利共赢 / 数百万品牌商信赖之选
+                </div>
+            </div>
+        </div>
+
+<!--        底部-->
+        <div class="foot">
+             <div class="d1">
+                <div class="pic">
+                    <img src="./images/phone.png" alt="">
+                </div>
+                 <p>400-998-5871</p>
+             </div>
+            <div class="d2">
+              <div class="item">
+                 <div class="pic">
+                     <img src="./images/femail.png" alt="">
+                 </div>
+                  <div class="text">
+                     <p>邮箱</p>
+                      <p>0000000000@qq.com</p>
+                  </div>
+              </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./images/fweb.png" alt="">
+                    </div>
+                    <div class="text">
+                        <p>网址</p>
+                        <p>www.wqxweb.com</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./images/fmax.png" alt="">
+                    </div>
+                    <div class="text">
+                        <p>传真</p>
+                        <p>0574-0000-0000</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./images/fadd.png" alt="">
+                    </div>
+                    <div class="text">
+                        <p>地址</p>
+                        <p>宁波市鄞州区鄞县大道东段1299号鄞州商会南楼15楼</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d3">
+              <div class="l">
+                  COPYRIGHT © 2009-2020 宁波万千星网络技术有限公司. ALL RIGHTS RESERVED.<br>
+                  <a href="https://beian.miit.gov.cn/" target="_self">浙ICP备14034824号  浙公网安备33020902000282号</a>
+              </div>
+                <div class="r">
+                    网站建设　　小程序/公众号开发　　商城门户　　系统软件　　网络营销
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+</div>
+</body>
+<!--<script  src="./js/script.js"></script>-->
+<script src="./js/swiper.js"></script>
+<script src="./js/smooth-scrollbar.js"></script>
+<script src="./js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="./js/wow.js"></script>
+<script src="./js/common.js"></script>
+
+<script>
+
+    let scrollbar=Scrollbar.get(document.getElementById('scroller-wrapper'))
+    scrollbar.scrollTo(0,0)
+    window.pageYOffset=scrollbar.scrollTop
+    scrollbar.addListener((status) => {
+        wow.scrollHandler()
+
+        $(".main div").each(function() {
+            var _this = $(this);
+            if ($(window).scrollTop() >= $(this).offset().top - $(window).height() + 100)
+            {
+                _this.addClass('show');
+            }else{
+                _this.removeClass('show');
+            }
+        });
+
+        if(status.offset.y>10){
+            $('.header').addClass('activeHeader')
+        }else{
+            $('.header').removeClass('activeHeader')
+        }
+        window.pageYOffset=scrollbar.scrollTop
+    });
+
+</script>
+</html>
