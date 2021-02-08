@@ -49,6 +49,7 @@
 <!--        首页banner-->
         <div class="banner" >
             <div class="content">
+                <canvas id='canvi'></canvas>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -150,7 +151,7 @@
 
 <!--            五个属性-->
                 <div class="fiveIcon">
-                    <div class="item">
+                    <a class="item" href="./webs.html" target="_self">
                        <div class="nr">
                            <div class="pic">
                                <img src="./images/computer.png" alt="">
@@ -170,8 +171,8 @@
                         <div class="spic">
                             <img src="./images/logo2.png" alt="">
                         </div>
-                    </div>
-                    <div class="item">
+                    </a>
+                    <a class="item" href="./mini.html" target="_self">
                         <div class="nr">
                             <div class="pic">
                                 <img src="./images/telephone.png" alt="">
@@ -192,8 +193,8 @@
                         <div class="spic">
                             <img src="./images/logo2.png" alt="">
                         </div>
-                    </div>
-                    <div class="item">
+                    </a>
+                    <a class="item" href="./shop.html" target="_self">
                         <div class="nr">
                             <div class="pic">
                                 <img src="./images/car.png" alt="">
@@ -213,8 +214,8 @@
                         <div class="spic">
                             <img src="./images/logo2.png" alt="">
                         </div>
-                    </div>
-                    <div class="item">
+                    </a>
+                    <a class="item" href="./sys.html" target="_self">
                         <div class="nr">
                             <div class="pic">
                                 <img src="./images/manu.png" alt="">
@@ -234,8 +235,8 @@
                         <div class="spic">
                             <img src="./images/logo2.png" alt="">
                         </div>
-                    </div>
-                    <div class="item">
+                    </a>
+                    <a class="item" href="./internet.html" target="_self">
                         <div class="nr">
                             <div class="pic">
                                 <img src="./images/computer2.png" alt="">
@@ -255,7 +256,7 @@
                         <div class="spic">
                             <img src="./images/logo2.png" alt="">
                         </div>
-                    </div>
+                    </a>
                     <div class="waves">
 
                     </div>
@@ -670,6 +671,9 @@
 <script src="./js/wave.js"></script>
 
 <script>
+
+
+
     // 初始化滚动条
     let scrollbar=Scrollbar.get(document.getElementById('scroller-wrapper'))
     scrollbar.scrollTo(0,0)
@@ -708,5 +712,56 @@
             clickable :true,
         }
     });
+
+
+    var c = document.getElementById('canvi');
+    var $2 = c.getContext('2d');
+
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+
+    var txt = function() {
+        var _t = "WIND".split("").join(String.fromCharCode(0x2004));
+        $2.font = "pt sans";
+        $2.fillStyle = 'hsla(277, 90%, 50%, .8)';
+        $2.fillText(_t, (c.width - $2.measureText(_t).width) * 0.5, c.height * 0.5);
+        return _t;
+    }
+
+    var draw = function(a, b, t) {
+        $2.lineWidth = 0.8;
+        $2.fillStyle = ' #1E1E1E';
+        $2.fillRect(0, 0, w, h);
+        for (var i = -60; i < 60; i += 1) {
+            $2.strokeStyle = 'hsla(0,15%,40%, .15)';
+            $2.beginPath();
+            $2.moveTo(0, h / 2);
+            for (var j = 0; j < w; j += 10) {
+                $2.lineTo(10 * Math.sin(i / 10) +
+                    j + 0.008 * j * j,
+                    Math.floor(h / 2 + j / 2 *
+                        Math.sin(j / 50 - t / 50 - i / 118) +
+                        (i * 0.9) * Math.sin(j / 25 - (i + t) / 65)));
+            };
+            $2.stroke();
+        }
+    }
+    var t = 0;
+
+    window.addEventListener('resize', function() {
+        c.width = w = window.innerWidth;
+        c.height = h = window.innerHeight;
+        $2.fillStyle = 'hsla(277, 95%, 55%, 1)';
+    }, false);
+
+    var run = function() {
+        window.requestAnimationFrame(run);
+        t += 1;
+        draw(33, 52 * Math.sin(t / 2400), t);
+        // txt();
+    };
+
+    run();
+
 </script>
 </html>
