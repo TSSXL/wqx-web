@@ -154,6 +154,10 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+  transition: all 600ms;
+}
+.home .main .pager a:hover {
+  color: #8C111B;
 }
 .home .foot {
   width: 90%;

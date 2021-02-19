@@ -131,7 +131,15 @@
         width:100%;
         display: block;
         object-fit: cover;
-       height:100%;
+        animation: showBig 4s forwards linear;
+      }
+      @keyframes showBig {
+        from{
+          transform: scale(1);
+        }
+        to{
+          transform: scale(1.2);
+        }
       }
     }
     .text{

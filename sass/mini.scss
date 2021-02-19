@@ -131,7 +131,15 @@
         width:100%;
         display: block;
         object-fit: cover;
-       height:100%;
+        animation: showBig 4s forwards linear;
+      }
+      @keyframes showBig {
+        from{
+          transform: scale(1);
+        }
+        to{
+          transform: scale(1.2);
+        }
       }
     }
     .circles{
@@ -181,11 +189,20 @@
         animation-delay: 800ms;
       }
       @keyframes rotate {
-        from{
-          transform: rotate(0) ;
+        0%{
+          transform: translate(0,0);
         }
-        to{
-          transform: rotate(360deg);
+        25%{
+          transform: translate(5px,5px);
+        }
+        50%{
+          transform: translate(8px,8px);
+        }
+        75%{
+          transform: translate(5px,5px);
+        }
+        100%{
+          transform: translate(0,0);
         }
       }
     }

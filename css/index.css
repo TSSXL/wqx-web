@@ -514,7 +514,7 @@
 }
 .home .main .cases .allItems .item {
   width: 30%;
-  margin-right: 2.5%;
+  margin-left: 2.5%;
   margin-top: 40px;
   cursor: pointer;
   position: relative;

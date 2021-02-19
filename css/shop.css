@@ -126,7 +126,15 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  height: 100%;
+  animation: showBig 4s forwards linear;
+}
+@keyframes showBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 .home .banner .text {
   position: absolute;
@@ -286,7 +294,7 @@
   opacity: 0.8;
 }
 .home .main .need .content {
-  width: 60%;
+  width: 80%;
   margin: 60px auto;
   display: flex;
   flex-direction: row;
@@ -299,7 +307,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 20%;
+  width: 23%;
 }
 .home .main .need .content .item .nr {
   position: absolute;
@@ -373,6 +381,106 @@
   margin: 80px auto;
   position: relative;
   overflow: hidden;
+}
+.home .main .chengshu .dot1 {
+  background-color: #FF0808;
+  position: absolute;
+  right: 10%;
+  top: 55%;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+.home .main .chengshu .dot1::before, .home .main .chengshu .dot1::after {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  background-color: #FF0808;
+}
+.home .main .chengshu .dot1::before {
+  animation: scale 2s infinite;
+}
+.home .main .chengshu .dot1::after {
+  animation: scale2 2s infinite;
+}
+.home .main .chengshu .dot2 {
+  background-color: #FF0808;
+  position: absolute;
+  right: 20%;
+  top: 45%;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.home .main .chengshu .dot2::before, .home .main .chengshu .dot2::after {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  background-color: #FF0808;
+  opacity: 0.5;
+}
+.home .main .chengshu .dot2::before {
+  animation: scale 2s infinite;
+  animation-delay: 100ms;
+}
+.home .main .chengshu .dot2::after {
+  animation: scale2 2s infinite;
+  animation-delay: 100ms;
+}
+.home .main .chengshu .dot3 {
+  background-color: #FF0808;
+  position: absolute;
+  right: 25%;
+  top: 80%;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.home .main .chengshu .dot3::before, .home .main .chengshu .dot3::after {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  background-color: #FF0808;
+  opacity: 0.3;
+}
+.home .main .chengshu .dot3::before {
+  animation: scale 2s infinite;
+  animation-delay: 200ms;
+}
+.home .main .chengshu .dot3::after {
+  animation: scale2 2s infinite;
+  animation-delay: 200ms;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+@keyframes scale2 {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(12);
+    opacity: 0;
+  }
 }
 .home .main .chengshu .p {
   position: absolute;
@@ -578,8 +686,8 @@
   margin: 20px auto;
 }
 .home .main .free .allItems {
-  width: 70%;
-  margin: 60px auto;
+  width: 80%;
+  margin: 80px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -641,6 +749,7 @@
   font-size: 14px;
   font-family: "MicrosoftYaHei";
   margin-top: 10px;
+  line-height: 25px;
 }
 .home .main .free .allItems .item:hover {
   box-shadow: rgba(102, 102, 102, 0.5) 0px 0px 10px;

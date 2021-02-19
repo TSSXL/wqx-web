@@ -126,7 +126,15 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  height: 100%;
+  animation: showBig 4s forwards linear;
+}
+@keyframes showBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 .home .banner .text {
   position: absolute;
@@ -280,7 +288,7 @@
   font-family: "FZCYSK--GBK1-0";
 }
 .home .main .need .content {
-  width: 60%;
+  width: 1152px;
   margin: 80px auto;
   position: relative;
   margin-top: 200px;
@@ -288,10 +296,10 @@
 .home .main .need .content .c1 {
   width: 100%;
   text-align: center;
+  margin-left: 10px;
 }
 .home .main .need .content .c1 img {
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%;
 }
 .home .main .need .content .c2 {
   position: absolute;

@@ -158,6 +158,10 @@
         color:#666666;
         font-family: 'SOURCEHANSANSCN-REGULAR';
         display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden;
+        transition: all 600ms;
+        &:hover{
+          color:#8C111B;
+        }
       }
     }
   }

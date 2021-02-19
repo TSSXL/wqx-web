@@ -126,7 +126,15 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  height: 100%;
+  animation: showBig 4s forwards linear;
+}
+@keyframes showBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 .home .banner .text {
   position: absolute;
@@ -417,6 +425,11 @@
   color: #E9E9E9;
   font-size: 48px;
   font-family: "FZCYSK--GBK1-0";
+  transition: all 600ms;
+}
+.home .main .chose .allItems .item:hover span {
+  color: #8C111B;
+  opacity: 0.5;
 }
 .home .main .chose .allItems .item .p1 {
   color: #333333;
@@ -537,6 +550,21 @@
   color: white;
   font-family: "MicrosoftYaHei";
   font-size: 18px;
+  transition: all 600ms;
+}
+.home .main .service .allItems .item:hover .pic {
+  background-color: #B80211;
+}
+.home .main .service .allItems .item:hover .text .circle {
+  border-color: white;
+  transform: scale(1.2);
+}
+.home .main .service .allItems .item:hover .text .circle span {
+  opacity: 1;
+}
+.home .main .service .allItems .item:hover .text p {
+  opacity: 1;
+  transform: scale(1.2);
 }
 .home .main .service .allItems .item:last-child .text p {
   transform: scale(1.3);
